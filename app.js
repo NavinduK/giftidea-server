@@ -20,9 +20,11 @@ app.use(bodyParser.json());
 
 //Import routes
 var usersRouter = require('./routes/users');
+var giftsRouter = require('./routes/gifts');
 
 // Api routes
 app.use('/api/auth', usersRouter);
+app.use('/api', giftsRouter);
 
 app.listen(PORT, () =>{
     console.log(`Server running on Prot: ${PORT}`)

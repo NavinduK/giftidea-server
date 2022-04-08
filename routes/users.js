@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var User = require('../models/user.model');
 var bcrypt = require('bcrypt');
 
-//Get all users
+//Get current users
 router.get('/users/me', function(req, res) {
   const ID_token = req.headers.authorization;
   User.findById(ID_token, (err, user) => {
@@ -24,7 +24,7 @@ router.post('/users', function (req, res) {
 });
 
 // Login
-router.post('/users/token', function (req, res) {
+router.post('/tokens', function (req, res) {
   var email = req.body.email;
   var pw = req.body.password;
   User.findOne({ 'email': email }, function (err, profile) {
