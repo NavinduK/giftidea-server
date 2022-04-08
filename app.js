@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 var usersRouter = require('./routes/users');
 
 // Api routes
-app.use('/auth', usersRouter);
+app.use('/api/auth', usersRouter);
 
 app.listen(PORT, () =>{
     console.log(`Server running on Prot: ${PORT}`)
