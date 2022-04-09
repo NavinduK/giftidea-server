@@ -20,10 +20,12 @@ app.use(bodyParser.json());
 
 //Import routes
 var usersRouter = require('./routes/users');
+var peopleRouter = require('./routes/people');
 var giftsRouter = require('./routes/gifts');
 
 // Api routes
 app.use('/api/auth', usersRouter);
+app.use('/api', peopleRouter);
 app.use('/api', giftsRouter);
 
 app.listen(PORT, () =>{
