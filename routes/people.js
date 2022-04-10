@@ -5,7 +5,7 @@ var Gift = require('../models/gift.model');
 
 //Get all people
 router.get('/people', function (req, res) {
-  People.find({}, (err, people) => {
+  People.find({ "owner":req.headers.authorization }, (err, people) => {
     if (err) { return res.status(500).json({ msg: 'ERROR_FETCH_PEOPLE', data: err }); }
     return res.status(200).json({ data: people });
   });
