@@ -51,7 +51,7 @@ router.post('/tokens', function (req, res) {
 });
 
 //Update a user
-router.put('/users/me', function(req, res) {
+router.patch('/users/me', function(req, res) {
   const pw = req.body.password;
   const ID_token = req.headers.authorization;
   User.findById(ID_token, (err, user) => {
